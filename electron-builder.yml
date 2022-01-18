@@ -1,0 +1,79 @@
+appId: 'nsmi'
+productName: 'NoSadNile Modpack Installer'
+artifactName: '${productName}-setup-${version}.${ext}'
+
+copyright: 'Copyright © 2021 NoSadNile Network'
+
+asar: true
+compression: 'maximum'
+
+files:
+  - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.travis.yml,.nvmrc,.eslintrc.json,build.js}'
+
+extraResources:
+  - 'libraries'
+
+# Windows Configuration
+win: 
+  target: 
+    - target: 'nsis'
+      arch:
+        - 'x64'
+        - 'arm64'
+        - 'ia32'
+
+# Windows Installer Configuration
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+
+# macOS Configuration
+mac:
+  target:
+    - target: 'dmg'
+      arch:
+        - 'x64'
+        - 'arm64'
+  artifactName: '${productName}-setup-${version}-${arch}.${ext}'
+  category: 'public.app-category.games'
+  darkModeSupport: true
+
+# Linux Configuration
+linux: 
+  target:
+    - target: 'deb'
+      arch:
+        - 'x64'
+        - 'arm64'
+        - 'ia32'
+        - 'armv7l'
+    - target: 'rpm'
+      arch:
+        - 'x64'
+        - 'arm64'
+        - 'ia32'
+        - 'armv7l'
+    - target: 'AppImage'
+      arch:
+        - 'x64'
+        - 'arm64'
+        - 'ia32'
+        - 'armv7l'
+    - target: 'Snap'
+      arch:
+        - 'x64'
+        - 'arm64'
+        - 'ia32'
+        - 'armv7l'
+  maintainer: 'NoSadNile Network'
+  vendor: 'NoSadNile Network'
+  synopsis: 'Modded Minecraft Installer'
+  description: 'Installer for custom modpacks which installs them for easy access and fun playtime.'
+  category: 'Game'
+
+
+directories:
+  buildResources: 'build'
+  output: 'dist'

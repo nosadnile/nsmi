@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="assets/js/index.js"></script>
+        <link rel="stylesheet" href="assets/css/index.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./font-awesome/css/all.min.css" rel="stylesheet" />
+        <title>NoSadNile Modpack Installer</title>
+    </head>
+    <body>
+        <h2>Welcome to the NoSadNile Modpack Installation Wizard</h2>
+        <h3>This tool will guide you through installing our modpacks.</h3>
+        <h4>Please select the modpack you would like to install.</h4>
+        <input type="file" name="file" id="file" accept=".nsmp" aria-hidden="true" />
+        <div class="choose-nsmp">
+            <input type="button" value="Choose File" id="cf"/><p id="fc">No file chosen</p>
+        </div><br />
+        <p>Install to:</p>
+        <select name="install" id="install">
+            <option name="official" value="official" selected>Official Launcher</option>
+            <option name="curseforge" value="overwolf" disabled aria-disabled="true">CurseForge Launcher (Overwolf)</option>
+            <option name="gdlauncher" value="gdlauncher" disabled aria-disabled="true">GDLauncher</option>
+            <option name="multimc" value="multimc" disabled aria-disabled="true">MultiMC</option>
+            <option name="nosadnile" value="proprietary" disabled aria-disabled="true">NoSadNile Launcher (Coming Soon)</option>
+        </select>
+        <input type="text" placeholder="MultiMC Instances Directory" class="mmc-i-d" /><br /><br />
+        <input type="submit" value="Install" id="f" />
+        <label for="force">Force?</label>
+        <input type="checkbox" id="force" name="force" /><br /><br />
+        <p>Installation Progress:</p><br />
+        <p id="im">Installed mods: 0/0</p>
+        <input type="range" min="0" max="100" value="0" step="1" disabled class="slider" id="ip" />
+        <p id="io">Installed overrides: 0%</p>
+        <input type="range" min="0" max="100" value="0" step="1" disabled class="slider" id="ip2" /><br /><br />
+        <p id="status" style="font-weight: bold;color: darkblue;"></p>
+        <a class="icon-q" href="https://git.nosadnile.net/RedstoneWizard08/nosadnile-modpack-installer/-/wikis/home"><i class="fas fa-question-circle fa-2x faw-icon"></i></a>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
